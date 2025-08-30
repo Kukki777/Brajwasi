@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { 
   Phone, 
   Mail, 
@@ -41,7 +40,6 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Using Formspree as the email service (you'll need to replace with your form endpoint)
       const response = await fetch('https://formspree.io/f/xjkggyql', {
         method: 'POST',
         headers: {
@@ -108,7 +106,6 @@ const Contact = () => {
       url: '',
       color: 'from-pink-500 via-purple-500 to-indigo-500',
       hoverColor: 'hover:shadow-pink-500/50',
-      // followers: '25K+'
     },
     {
       name: 'Facebook',
@@ -116,7 +113,6 @@ const Contact = () => {
       url: '',
       color: 'from-blue-600 to-blue-400',
       hoverColor: 'hover:shadow-blue-500/50',
-      // followers: '18K+'
     },
     {
       name: 'WhatsApp',
@@ -129,61 +125,25 @@ const Contact = () => {
     {
       name: 'YouTube',
       icon: <Youtube className="h-8 w-8" />,
-      url: '',
+      url: '/',
       color: 'from-red-500 to-red-400',
       hoverColor: 'hover:shadow-red-500/50',
-      // followers: '12K+'
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-black pt-20 relative overflow-hidden">
-      {/* Animated Background */}
+      {/* Static Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute bottom-1/4 left-1/2 w-72 h-72 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
-      </div>
-
-      {/* Floating Particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full opacity-20"
-            animate={{
-              x: [0, 100, 0],
-              y: [0, -100, 0],
-              scale: [1, 1.5, 1],
-              opacity: [0.2, 0.8, 0.2]
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              delay: Math.random() * 5
-            }}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`
-            }}
-          />
-        ))}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-1/2 w-72 h-72 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="text-center mb-20"
-        >
-          <motion.div
-            initial={{ scale: 0.5, rotateY: -180 }}
-            animate={{ scale: 1, rotateY: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative inline-block"
-          >
+        <div className="text-center mb-20">
+          <div className="relative inline-block">
             <h1 className="text-7xl md:text-9xl font-black mb-8 relative">
               <span className="absolute inset-0 bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 bg-clip-text text-transparent blur-sm">
                 Get In Touch
@@ -192,97 +152,56 @@ const Contact = () => {
                 Get In Touch
               </span>
             </h1>
-            <motion.div
-              initial={{ scaleX: 0, opacity: 0 }}
-              animate={{ scaleX: 1, opacity: 1 }}
-              transition={{ duration: 1.5, delay: 0.5 }}
-              className="absolute -bottom-4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent"
-            />
-          </motion.div>
+            <div className="absolute -bottom-4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent" />
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex justify-center items-center space-x-4 mt-8"
-          >
-            <Sparkles className="h-6 w-6 text-orange-400 animate-spin" />
+          <div className="flex justify-center items-center space-x-4 mt-8">
+            <Sparkles className="h-6 w-6 text-orange-400" />
             <p className="text-xl text-gray-300 font-light tracking-wide">Let's Create Something Delicious Together</p>
-            <Sparkles className="h-6 w-6 text-pink-400 animate-spin" style={{ animationDirection: 'reverse' }} />
-          </motion.div>
-        </motion.div>
+            <Sparkles className="h-6 w-6 text-pink-400" />
+          </div>
+        </div>
 
-        {/* Quick Contact Info - Minimalist Style */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-20"
-        >
+        {/* Quick Contact Info */}
+        <div className="mb-20">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="group"
+                className="group hover:-translate-y-2 hover:scale-105 transition-all duration-300"
               >
                 <div className="bg-gradient-to-br from-slate-800/60 via-gray-800/60 to-slate-900/60 backdrop-blur-xl rounded-2xl p-6 border border-gray-600/30 hover:border-orange-500/50 transition-all duration-300 relative overflow-hidden">
-                  {/* Subtle glow effect */}
                   <div className={`absolute inset-0 bg-gradient-to-r ${info.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl`}></div>
                   
                   <div className="relative z-10 text-center">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                      className={`bg-gradient-to-r ${info.gradient} text-white p-3 rounded-xl w-fit mx-auto mb-4 shadow-lg`}
-                    >
+                    <div className={`bg-gradient-to-r ${info.gradient} text-white p-3 rounded-xl w-fit mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                       {info.icon}
-                    </motion.div>
+                    </div>
                     
                     <h3 className="text-lg font-bold text-white mb-2">{info.title}</h3>
                     <p className="text-gray-300 font-medium">{info.details}</p>
                     <p className="text-gray-400 text-sm mt-1">{info.subtitle}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-16 mb-24">
           {/* Social Media Section */}
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-slate-800/50 to-gray-800/50 rounded-[3rem] blur-3xl"></div>
               
               <div className="relative bg-gradient-to-br from-slate-800/90 via-gray-800/90 to-slate-900/90 backdrop-blur-2xl rounded-[3rem] p-12 border border-gray-600/50 shadow-2xl overflow-hidden">
-                {/* Floating Crown */}
-                <motion.div
-                  animate={{ 
-                    y: [-10, 10, -10],
-                    rotate: [-2, 2, -2]
-                  }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute top-6 right-6 text-yellow-400 opacity-20"
-                >
+                <div className="absolute top-6 right-6 text-yellow-400 opacity-20">
                   <Crown className="h-12 w-12" />
-                </motion.div>
+                </div>
 
                 <div className="relative z-10">
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="flex justify-center mb-8"
-                  >
+                  <div className="flex justify-center mb-8">
                     <div className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 p-1 rounded-full shadow-2xl">
                       <div className="bg-slate-800 px-6 py-3 rounded-full">
                         <div className="flex items-center space-x-2">
@@ -294,7 +213,7 @@ const Contact = () => {
                         </div>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
 
                   <h2 className="text-4xl font-black text-center mb-12">
                     <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
@@ -304,43 +223,23 @@ const Contact = () => {
 
                   <div className="grid grid-cols-2 gap-6">
                     {socialLinks.map((social, index) => (
-                      <motion.a
+                      <a
                         key={social.name}
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        initial={{ opacity: 0, scale: 0.5, rotateY: -90 }}
-                        whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
-                        whileHover={{ 
-                          y: -10, 
-                          scale: 1.05,
-                          rotateY: 10,
-                          transition: { duration: 0.3 }
-                        }}
-                        className="group block"
+                        className="group block hover:-translate-y-2 hover:scale-105 transition-all duration-300"
                       >
                         <div className={`relative bg-gradient-to-br from-slate-800/80 to-gray-900/80 backdrop-blur-xl rounded-2xl p-8 border border-gray-600/50 shadow-xl ${social.hoverColor} hover:shadow-2xl transition-all duration-500 overflow-hidden`}>
-                          {/* Glow Effect */}
-                          <motion.div
-                            className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${social.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`}
-                          ></motion.div>
+                          <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${social.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`}></div>
 
-                          {/* Border Animation */}
                           <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-orange-400 rounded-tl-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                           <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-pink-400 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                           <div className="relative z-10 text-center">
-                            <motion.div
-                              whileHover={{ 
-                                scale: 1.2, 
-                                rotate: [0, -10, 10, 0],
-                                transition: { duration: 0.6 }
-                              }}
-                              className={`bg-gradient-to-r ${social.color} text-white p-4 rounded-xl mx-auto w-fit mb-4 shadow-2xl`}
-                            >
+                            <div className={`bg-gradient-to-r ${social.color} text-white p-4 rounded-xl mx-auto w-fit mb-4 shadow-2xl group-hover:scale-110 transition-transform duration-300`}>
                               {social.icon}
-                            </motion.div>
+                            </div>
                             
                             <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300">
                               {social.name}
@@ -350,33 +249,22 @@ const Contact = () => {
                             </p>
                           </div>
                         </div>
-                      </motion.a>
+                      </a>
                     ))}
                   </div>
-
-                
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-slate-800/50 to-gray-800/50 rounded-[3rem] blur-3xl"></div>
               
               <div className="relative bg-gradient-to-br from-slate-800/90 via-gray-800/90 to-slate-900/90 backdrop-blur-2xl rounded-[3rem] p-12 border border-gray-600/50 shadow-2xl overflow-hidden">
                 <div className="relative z-10">
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="flex justify-center mb-8"
-                  >
+                  <div className="flex justify-center mb-8">
                     <div className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 p-1 rounded-full shadow-2xl">
                       <div className="bg-slate-800 px-6 py-3 rounded-full">
                         <div className="flex items-center space-x-2">
@@ -388,7 +276,7 @@ const Contact = () => {
                         </div>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
 
                   <h2 className="text-4xl font-black text-center mb-12">
                     <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
@@ -396,13 +284,9 @@ const Contact = () => {
                     </span>
                   </h2>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                      >
+                      <div>
                         <input
                           type="text"
                           name="name"
@@ -412,13 +296,9 @@ const Contact = () => {
                           required
                           className="w-full bg-slate-800/50 border border-gray-600 rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 backdrop-blur-sm"
                         />
-                      </motion.div>
+                      </div>
                       
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                      >
+                      <div>
                         <input
                           type="email"
                           name="email"
@@ -428,14 +308,10 @@ const Contact = () => {
                           required
                           className="w-full bg-slate-800/50 border border-gray-600 rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 backdrop-blur-sm"
                         />
-                      </motion.div>
+                      </div>
                     </div>
 
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
-                    >
+                    <div>
                       <input
                         type="tel"
                         name="phone"
@@ -444,13 +320,9 @@ const Contact = () => {
                         placeholder="Phone Number"
                         className="w-full bg-slate-800/50 border border-gray-600 rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 backdrop-blur-sm"
                       />
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.4 }}
-                    >
+                    <div>
                       <input
                         type="text"
                         name="subject"
@@ -460,13 +332,9 @@ const Contact = () => {
                         required
                         className="w-full bg-slate-800/50 border border-gray-600 rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 backdrop-blur-sm"
                       />
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.5 }}
-                    >
+                    <div>
                       <textarea
                         name="message"
                         value={formData.message}
@@ -476,30 +344,20 @@ const Contact = () => {
                         required
                         className="w-full bg-slate-800/50 border border-gray-600 rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 backdrop-blur-sm resize-none"
                       ></textarea>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.6 }}
-                      className="text-center"
-                    >
-                      <motion.button
+                    <div className="text-center">
+                      <button
                         type="submit"
                         disabled={isSubmitting}
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="relative bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 text-white px-12 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden group"
+                        onClick={handleSubmit}
+                        className="relative bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 text-white px-12 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-orange-500/50 hover:scale-105 hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden group"
                       >
                         <span className="absolute inset-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                         <span className="relative flex items-center justify-center space-x-2">
                           {isSubmitting ? (
                             <>
-                              <motion.div
-                                animate={{ rotate: 360 }}
-                                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                                className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
-                              />
+                              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                               <span>Sending...</span>
                             </>
                           ) : (
@@ -509,37 +367,26 @@ const Contact = () => {
                             </>
                           )}
                         </span>
-                      </motion.button>
-                    </motion.div>
+                      </button>
+                    </div>
 
-                    {/* Status Messages */}
                     {submitStatus === 'success' && (
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="text-center p-4 bg-green-500/20 border border-green-500/50 rounded-xl"
-                      >
+                      <div className="text-center p-4 bg-green-500/20 border border-green-500/50 rounded-xl">
                         <p className="text-green-400 font-medium">Message sent successfully! We'll get back to you soon.</p>
-                      </motion.div>
+                      </div>
                     )}
 
                     {submitStatus === 'error' && (
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="text-center p-4 bg-red-500/20 border border-red-500/50 rounded-xl"
-                      >
+                      <div className="text-center p-4 bg-red-500/20 border border-red-500/50 rounded-xl">
                         <p className="text-red-400 font-medium">Something went wrong. Please try again or contact us directly.</p>
-                      </motion.div>
+                      </div>
                     )}
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
-
-      
       </div>
     </div>
   );

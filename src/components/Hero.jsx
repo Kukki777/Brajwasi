@@ -195,7 +195,9 @@ const Hero = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
+        .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3);
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           50% { transform: translateY(-15px) rotate(8deg); }

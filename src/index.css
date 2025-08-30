@@ -37,6 +37,7 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  
 }
 
 /* Enhanced animations */
@@ -52,4 +53,11 @@ html {
 .animate-float-delayed {
   animation: float 6s ease-in-out infinite;
   animation-delay: 2s;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
 }

@@ -52,7 +52,7 @@ const FoodCards = () => {
   ];
 
   return (
-    <div className="py-24 bg-gradient-to-b from-orange-50 via-white to-orange-50">
+    <div className="py-24 bg-gradient-to-b from-orange-50 via-white to-orange-50 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

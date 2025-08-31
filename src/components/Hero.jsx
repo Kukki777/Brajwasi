@@ -72,7 +72,6 @@ const Hero = () => {
             filter: 'blur(2px)'
           }}
         >
-        >
           🥞
         </div>
       </div>
@@ -196,37 +195,32 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Main Content - Better Mobile Optimization */}
+      {/* Main Content - Logo Integration */}
       <div className="relative z-20 text-center px-4 md:px-6 max-w-6xl mx-auto py-8 md:py-0">
         <div className="mb-4 md:mb-16">
-          {/* Mobile-optimized larger text */}
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] 2xl:text-[12rem] font-black mb-2 md:mb-8 leading-tight">
-            <div 
-              className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-red-500 to-orange-700 mb-1 md:mb-4"
-              style={{
-                textShadow: '0 8px 16px rgba(0,0,0,0.2), 0 0 40px rgba(255,100,0,0.3)',
-                filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.15))',
-                transform: 'perspective(800px) rotateX(3deg)',
-                animation: 'glow 4s ease-in-out infinite alternate'
-              }}
-            >
-              Brajwasi
+          {/* Logo Container with Mobile Optimization */}
+          <div 
+            className="flex justify-center items-center mb-6 md:mb-8"
+            style={{
+              animation: 'logoGlow 4s ease-in-out infinite alternate',
+              transform: 'perspective(800px) rotateX(2deg)'
+            }}
+          >
+            <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl mx-auto">
+              <img 
+                src="/assets/images/brajwasi brothers (1).png"
+                alt="Brajwasi Brothers Logo"
+                className="w-full h-auto object-contain filter drop-shadow-2xl"
+                style={{
+                  maxHeight: '50vh',
+                  minHeight: '150px'
+                }}
+              />
             </div>
-            <div 
-              className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-red-500 to-orange-600"
-              style={{
-                textShadow: '0 8px 16px rgba(0,0,0,0.2), 0 0 40px rgba(255,100,0,0.3)',
-                filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.15))',
-                transform: 'perspective(800px) rotateX(-3deg)',
-                animation: 'glow 4s ease-in-out infinite alternate 1s'
-              }}
-            >
-              Brothers
-            </div>
-          </h1>
+          </div>
 
           {/* Subtitle for better mobile experience */}
-          <div className="mt-3 md:mt-8">
+          <div className="mt-6 md:mt-8">
             <p className="text-base sm:text-lg md:text-2xl lg:text-3xl text-orange-800/80 font-semibold tracking-wide">
               Sweet Delights & Culinary Wonders
             </p>
@@ -257,6 +251,17 @@ const Hero = () => {
       </div>
 
       <style>{`
+        @keyframes logoGlow {
+          0% { 
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2)) drop-shadow(0 0 60px rgba(255,100,0,0.2));
+            transform: perspective(800px) rotateX(2deg) scale(1);
+          }
+          100% { 
+            filter: drop-shadow(0 15px 40px rgba(0,0,0,0.3)) drop-shadow(0 0 80px rgba(255,100,0,0.3));
+            transform: perspective(800px) rotateX(2deg) scale(1.02);
+          }
+        }
+        
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           50% { transform: translateY(-15px) rotate(8deg); }
@@ -275,15 +280,6 @@ const Hero = () => {
         @keyframes floatFast {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           50% { transform: translateY(-28px) rotate(18deg); }
-        }
-        
-        @keyframes glow {
-          0% { 
-            text-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 0 40px rgba(255,100,0,0.3);
-          }
-          100% { 
-            text-shadow: 0 12px 24px rgba(0,0,0,0.25), 0 0 60px rgba(255,100,0,0.4);
-          }
         }
         
         @keyframes twinkle {
@@ -315,12 +311,14 @@ const Hero = () => {
             max-height: 100dvh;
           }
           
-          @keyframes glow {
+          @keyframes logoGlow {
             0% { 
-              text-shadow: 0 6px 12px rgba(0,0,0,0.2), 0 0 30px rgba(255,100,0,0.25);
+              filter: drop-shadow(0 8px 20px rgba(0,0,0,0.15)) drop-shadow(0 0 40px rgba(255,100,0,0.15));
+              transform: perspective(800px) rotateX(2deg) scale(1);
             }
             100% { 
-              text-shadow: 0 10px 20px rgba(0,0,0,0.3), 0 0 50px rgba(255,100,0,0.35);
+              filter: drop-shadow(0 12px 30px rgba(0,0,0,0.25)) drop-shadow(0 0 60px rgba(255,100,0,0.25));
+              transform: perspective(800px) rotateX(2deg) scale(1.01);
             }
           }
           

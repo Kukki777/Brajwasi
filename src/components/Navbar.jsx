@@ -16,13 +16,6 @@ const Navbar = () => {
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
              
-              <div className="relative bg-white p-2 rounded-xl group-hover:scale-105 transition-transform duration-300 shadow-lg border-2 border-orange-200">
-                <img 
-                  src="/assets/images/logo.jpg" 
-                  alt="Brajwasi Brothers Logo" 
-                  className="h-8 w-8 object-contain"
-                />
-              </div>
             </div>
             <div className="hidden md:flex flex-col">
               <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">

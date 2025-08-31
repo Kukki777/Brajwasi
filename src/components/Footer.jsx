@@ -86,7 +86,7 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-gray-300 hover:text-orange-400 transition-colors duration-300">
                   <MapPin className="h-5 w-5 text-orange-400" />
-                  <span>Greater Noida, Uttar Pradesh</span>
+                  <span>Gurugram Haryana</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300 hover:text-orange-400 transition-colors duration-300">
                   <Phone className="h-5 w-5 text-orange-400" />

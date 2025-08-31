@@ -8,7 +8,7 @@ const FoodCards = () => {
     {
       id: 1,
       name: "Khadi Chawal",
-      description: "A grand feast with authentic flavors, featuring Khadi, rice. Our signature food brings together the best of traditional Indian cuisine in one complete meal.",
+      description: "A comforting blend of tangy kadhi paired with steamed rice. This traditional favorite brings together light flavors and homely taste, perfect for a satisfying meal.",
       images: [
         "/assets/images/food1.jpeg",
         "/assets/images/food1.2.jpeg",
@@ -23,7 +23,7 @@ const FoodCards = () => {
     {
       id: 2,
       name: "Rajma Chawal",
-      description: "Creamy, rich curry with tender Paneer pieces in our signature tomato-based sauce. Slow-cooked to perfection with aromatic spices and finished with fresh cream.",
+      description: "Classic red kidney beans cooked in a rich, spiced curry, served with fluffy rice. A wholesome and soulful North Indian delicacy loved for its hearty flavors.",
       images: [
         "assets/images/Food2.jpeg",
         "assets/images/Food2.jpeg",
@@ -53,7 +53,7 @@ const FoodCards = () => {
     {
       id: 4,
       name: "Chole Chawal",
-      description: "Fragrant basmati rice layered with spiced meat and vegetables, slow-cooked to perfection. Each grain tells a story of tradition and flavor.",
+      description: "Chole Chawal,A hearty feast of authentic flavors, featuring spicy chole served with fluffy rice. This signature dish combines the richness of North Indian tradition with wholesome taste, making it a perfect comfort meal.",
       images: [
         "/assets/images/food5.jpeg ",
         "/assets/images/food5.2.jpeg",

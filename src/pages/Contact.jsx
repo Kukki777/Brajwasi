@@ -72,14 +72,14 @@ const Contact = () => {
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Call Us",
-      details: "+91 98765 43210",
+      details: "+91 89299 56789",
       subtitle: "24/7 Available",
       gradient: "from-blue-400 to-cyan-500"
     },
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email Us",
-      details: "priyansh23042004@gmail.com",
+      details: "brajwasibrothers777@gmail.com",
       subtitle: "Quick Response",
       gradient: "from-green-400 to-emerald-500"
     },
